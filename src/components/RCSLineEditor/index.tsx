@@ -74,36 +74,33 @@ export const RCSLineEditor = ({
 
   return (
     <LineRCSEditorStyled>
-      <Tooltip>
-        <ButtonIconStyled
-          value={BOLD}
-          onMouseDown={handleStyleEditor}
-          active={currentInlineStyle.has(BOLD)}
-          type="button"
-        >
-          <Bold width="20px" />
-        </ButtonIconStyled>
-      </Tooltip>
-      <Tooltip>
-        <ButtonIconStyled
-          value={ITALIC}
-          active={currentInlineStyle.has(ITALIC)}
-          onMouseDown={handleStyleEditor}
-          type="button"
-        >
-          <Italic width="20px" />
-        </ButtonIconStyled>
-      </Tooltip>
+      <ButtonIconStyled
+        value={BOLD}
+        onMouseDown={handleStyleEditor}
+        active={currentInlineStyle.has(BOLD)}
+        type="button"
+      >
+        <Bold width="20px" />
+      </ButtonIconStyled>
+
+      <ButtonIconStyled
+        value={ITALIC}
+        active={currentInlineStyle.has(ITALIC)}
+        onMouseDown={handleStyleEditor}
+        type="button"
+      >
+        <Italic width="20px" />
+      </ButtonIconStyled>
+
       <div style={{ position: 'relative' }}>
-        <Tooltip>
-          <ButtonIconStyled
-            type="button"
-            open={linkModal}
-            onMouseDown={handleOpenLinkModal}
-          >
-            <LinkIcon width="20px" />
-          </ButtonIconStyled>
-        </Tooltip>
+        <ButtonIconStyled
+          type="button"
+          open={linkModal}
+          onMouseDown={handleOpenLinkModal}
+        >
+          <LinkIcon width="20px" />
+        </ButtonIconStyled>
+
         {linkModal && (
           <ModalInsertLink
             setLinkModal={handleCloseLinkModal}
@@ -115,11 +112,10 @@ export const RCSLineEditor = ({
           />
         )}
       </div>
-      <Tooltip>
-        <ButtonIconStyled type="button" onMouseDown={handleRemoveLink}>
-          <Unlink width="20px" />
-        </ButtonIconStyled>
-      </Tooltip>
+
+      <ButtonIconStyled type="button" onMouseDown={handleRemoveLink}>
+        <Unlink width="20px" />
+      </ButtonIconStyled>
     </LineRCSEditorStyled>
   );
 };
